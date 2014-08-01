@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/icon">
+	<file alias="app">res/icon064.png</file>
+        <file alias="home">res/home.png</file>
+        <file alias="settings">res/settings.png</file>
+        <file alias="about">res/star.png</file>
+        <file alias="quit">res/shutdown.png</file>
+    </qresource>
+    <qresource prefix="/arrow">
+        <file alias="left">res/arrow_left.png</file>
+        <file alias="left_press">res/arrow_left_press.png</file>
+        <file alias="right">res/arrow_right.png</file>
+        <file alias="right_press">res/arrow_right_press.png</file>
+    </qresource>
+    <qresource prefix="/text">
+        <file alias="license">res/documents/license</file>
+        <file alias="license">res/documents/fr/license</file>
+    </qresource>
+</RCC>
