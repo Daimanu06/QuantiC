@@ -13,8 +13,11 @@ PrefixWidget::PrefixWidget(QWidget *parent) :
 PrefixNone::PrefixNone(QWidget *parent) :
 	PrefixWidget(parent)
 {}
+
 double PrefixNone::indexToExponent(uint) {return 1;}
+
 int    PrefixNone::exponentToIndex(uint) {return 0;}
+
 void   PrefixNone::formatNumber(double &, int &) {}
 
 
@@ -48,13 +51,16 @@ PrefixPow3::PrefixPow3(QWidget *parent) :
 	}
 	setCurrentIndex(8);
 }
+
 double PrefixPow3::indexToExponent(uint index) {
 	//return pow10((double)index*3-24);
 	return pow(10, (double)index*3-24);
 }
+
 int PrefixPow3::exponentToIndex(uint exponent) {
 	return (exponent+24)/3;
 }
+
 void PrefixPow3::formatNumber(double& value, int& exponent) {
 	//qDebug("%i", (int)log10(value));//TODO: simplifier?
 
@@ -133,6 +139,7 @@ PrefixAll::PrefixAll(QWidget *parent) :
 	}
 	setCurrentIndex(10);
 }
+
 double PrefixAll::indexToExponent(uint index) {
 	static double indexToexp[] = {
 		1e-24, 1e-21, 1e-18, 1e-15, 1e-12, 1e-9, 1e-6, 1e-3, 1e-2, 1e-1,
@@ -140,6 +147,7 @@ double PrefixAll::indexToExponent(uint index) {
 	};
 	return indexToexp[index];
 }
+
 int PrefixAll::exponentToIndex(uint exponent) {
 	static QHash<int, uint> expToIndex({
 		{-24,  0}, {-21,  1}, {-18,  2},
@@ -152,6 +160,7 @@ int PrefixAll::exponentToIndex(uint exponent) {
 	});
 	return expToIndex[exponent];
 }
+
 void PrefixAll::formatNumber(double& value, int& exponent) {
 	//value = |value|
 	// |value| = 0

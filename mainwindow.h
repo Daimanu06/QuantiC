@@ -27,8 +27,8 @@ class MainWindow : public QMainWindow {
 		 *
 		 * The pages (QuantityWidget) will be deleted and recreated if new datas ara found.
 		 */
-
 		void reloadData();
+
 		/**
 		 * @fn resetWindow
 		 * @brief Reset the main window position and geometry.
@@ -41,7 +41,7 @@ class MainWindow : public QMainWindow {
 	signals:
 		void showDialogSettings();
 		void showDialogAbout();
-		void showDialogLicenses();
+		void showDialogLicense();
 		void visitWebsite();
 
 	private:

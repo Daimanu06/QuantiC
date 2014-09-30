@@ -4,11 +4,11 @@
 #include <QtWidgets/QDialog>
 
 /**
-   @class DialogAbout
+ * @class DialogAbout
  * @ingroup GUI
  * @brief About dialog window
  *
- * Displays a short presentation text and the application icon.
+ * Displays a short presentation text
  */
 class DialogAbout : public QDialog {
 	Q_OBJECT

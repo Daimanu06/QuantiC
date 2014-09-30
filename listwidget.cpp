@@ -1,11 +1,12 @@
 #include "listwidget.h"
-#include "banner.h"
 #include "datamanager.h"
+#include <QtCore/QSignalMapper>
 #include <QtGui/QPainter>
 #include <QtGui/QPaintEvent>
-#include <QtCore/QSignalMapper>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
+#include <QFont>
 
 ListButton::ListButton(const QSize &fixed_size, const Quantity& q, QWidget *parent) :
 	QAbstractButton(parent),
@@ -25,10 +26,8 @@ void ListButton::paintEvent(QPaintEvent *event) {
 	event->accept();
 }
 
-
-ListWidget::ListWidget(const Banner *banner, QWidget *parent) :
-	QWidget(parent),
-	m_mapper(new QSignalMapper(this))
+ListWidget::ListWidget(QWidget *parent) :
+	HomeWidget(parent)
 {
 	DataManager& manager = DataManager::getInstance();
 	QGridLayout *layout = new QGridLayout(this);
@@ -39,14 +38,26 @@ ListWidget::ListWidget(const Banner *banner, QWidget *parent) :
 		str[0] = str[0].toUpper();
 		return str;
 	};
+
+	//Set ListWidget and its children's font
+	QFont font;
+	font.setPointSize(15);
+	setFont(font);
+
+	//Set all the widgets
 	for(int i = 0; i < manager.count(); i++) {
 		ListButton *button = new ListButton(button_size, manager.at(i), this);
+		QPushButton *text = new QPushButton(toSentenceCase(manager.at(i).name));
+		text->setStyleSheet("text-align:left; font-size: 16pt;");
+		text->setFlat(true);
 		layout->addWidget(button, i, 0);
-		layout->addWidget(new QLabel(toSentenceCase(manager.at(i).name), this), i, 1);
+		layout->addWidget(text, i, 1);
 		connect(button, SIGNAL(clicked()), m_mapper, SLOT(map()));
+		connect(text,   SIGNAL(clicked()), m_mapper, SLOT(map()));
 		m_mapper->setMapping(button, i+1);
+		m_mapper->setMapping(text, i+1);
 	}
 
-	connect(m_mapper, SIGNAL(mapped(int)), banner, SLOT(setCurrentIndex(int)));
+	connect(m_mapper, SIGNAL(mapped(int)), this, SIGNAL(quantityChosen(int)));
 	setLayout(layout);
 }

@@ -5,10 +5,12 @@
 #include <QtGui/QDoubleValidator>
 
 /**
- * Redefine the rules of the validator since the QDoubleValidator behaviour is weird to me.
+ * @class DoubleValidator
+ * @brief Redefines the validation rules of the QDoubleValidator.
  */
 class DoubleValidator : public QDoubleValidator {
 	Q_OBJECT
+
 	public:
 		typedef double number_t;
 		DoubleValidator(number_t min, number_t max, int decimals, QObject *parent = nullptr);

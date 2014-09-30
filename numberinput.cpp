@@ -12,7 +12,10 @@ DoubleValidator::DoubleValidator(number_t min, number_t max, int decimals, QObje
 QValidator::State DoubleValidator::validate(QString &s, int &) const {
 	QLocale locale;
 
-	if (s.isEmpty() || s == locale.negativeSign())
+	//TODO: problem in range
+	//TODO: deal with locale
+	if (s.isEmpty() || s.at(0) == '0' || s.at(0) == locale.negativeSign() || s.at(0) ==locale.positiveSign())
+	//if (s.isEmpty() || s.at(0) == locale.negativeSign())
 		return QValidator::Intermediate;
 
 	bool ok;
@@ -41,6 +44,7 @@ void NumberInput::setValue(number_t val) {
 	setText( QString::number(val, 'g', 10) );
 	//setText( QLocale().toString(val, 'g', 10));
 }
+
 NumberInput::number_t NumberInput::value() const {
 	return text().toDouble();
 }

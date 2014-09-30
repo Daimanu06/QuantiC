@@ -58,7 +58,7 @@ class BannerArrow : public QAbstractButton {
  *
  * Made of two arrows (left and right), the icon and the title of the current quantity.
  * When the user clicks an arrow, the quantity changes.
- * When he clicks the title / icon, the software returns to home screen.
+ * When the user clicks the title / icon, the software returns to the home page.
  */
 class Banner : public QWidget {
 	Q_OBJECT

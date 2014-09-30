@@ -11,16 +11,9 @@ QT += core gui xml widgets
 TARGET   = QuantiC
 TEMPLATE = app
 CONFIG  += C++11
-#CONFIG  += static
-#QMAKE_CXXFLAGS += -lgmp -lgmpxx
-#QMAKE_LFLAGS += -lgmp -lgmpxx
-
-#LIBS += gmpxx gmp
 
 OBJECTS_DIR = obj/
 MOC_DIR = moc/
-#DESTDIR = bin/
-
 
 #### Files ####
 HEADERS += \
@@ -41,7 +34,9 @@ HEADERS += \
 	browsefileswidget.h \
 	data.h \
 	datamanager.h \
-	settings.h
+	settings.h \
+    dialoglicense.h \
+    compilation_infos.h
 
 SOURCES += \
 	main.cpp \
@@ -62,13 +57,14 @@ SOURCES += \
 	browsefileswidget.cpp \
 	data.cpp \
 	datamanager.cpp \
-	settings.cpp
+	settings.cpp \
+    dialoglicense.cpp \
+    compilation_infos.cpp
 
 TRANSLATIONS += \
 	QuantiC.en.ts \
 	QuantiC.fr_FR.ts
 
-#VERSION = 0.5.1
 ICON = "res/icon064.png"
 
 linux-g++-32 {
@@ -81,4 +77,11 @@ win32 {
 	message("Windows 32 bits")
 }
 
-RESOURCES += ressources.qrc
+RESOURCES += \
+	icons.qrc \
+	texts.qrc
+
+ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+
+OTHER_FILES += \
+	android/AndroidManifest.xml

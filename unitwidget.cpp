@@ -4,16 +4,17 @@
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QLabel>
 #include "settings.h"
+#include "data.h"
 
 UnitWidget::UnitWidget(const Unit &unit, bool prefixAllowed, QWidget *parent) :
 	QWidget( parent ),
 	ui_numinput ( new NumberInput( unit.minimum, unit.maximum, unit.defaultvalue) ),
 	ui_label    ( new QLabel     ( unit.symbols[Settings::getInstance().symbolType()] ) ),
-	unit     ( unit )
+	unit        ( unit )
 {
 	QHBoxLayout *layout = new QHBoxLayout;
 	ui_numinput->setMinimumWidth(300);
-	ui_label->setFixedWidth(40);
+	ui_label->setFixedWidth(50);
 
 	ui_label->setToolTip( unit.name );
 
@@ -21,10 +22,20 @@ UnitWidget::UnitWidget(const Unit &unit, bool prefixAllowed, QWidget *parent) :
 
 	if(prefixAllowed == false)
 		ui_prefixes = new PrefixNone;
-	else
-	{//TODO: prendre en compte les settings
-		ui_prefixes = new PrefixPow3;
-		//prefixes = new PrefixAll;
+	else {
+	//TODO: c'est au prefixwidget de formater??
+	//TODO: factory pattern?
+		switch(Settings::getInstance().prefixPolicy()) {
+			case Settings::P_AllPrefixes:
+				ui_prefixes = new PrefixAll;
+				break;
+			case Settings::P_OnlyPow3:
+				ui_prefixes = new PrefixPow3;
+				break;
+			case Settings::P_NoPrefixes:
+				ui_prefixes = new PrefixNone;
+				break;
+		}
 		ui_prefixes->setFixedWidth(50);
 		layout->addWidget(ui_prefixes);
 	}
@@ -49,9 +60,11 @@ void UnitWidget::setValue(double value) {
 	ui_numinput->setValue( isPositive ? value : -value );
 	ui_prefixes->setCurrentIndex(ui_prefixes->exponentToIndex(exponent));
 }
+
 double UnitWidget::value() const {
 	return ui_numinput->value() * ui_prefixes->indexToExponent(ui_prefixes->currentIndex());
 }
+
 void UnitWidget::prefixChanged() {
 	emit valueChanged(value());
 }

@@ -1,22 +1,29 @@
 #ifndef HOMEWIDGET_H
 #define HOMEWIDGET_H
 
-#include <QtWidgets/QScrollArea>
+#include <QtWidgets/QWidget>
 
-class Banner;
+class QSignalMapper;
 
 /**
  * @class HomeWidget
  * @ingroup GUI
- * @brief First page that shows a list of quantities.
+ * @brief Base class of home pages.
+ *
+ * @see TileWidget
+ * @see ListWidget
  */
-class HomeWidget : public QScrollArea {
+class HomeWidget : public QWidget {
 	Q_OBJECT
 
 	public:
 		explicit HomeWidget(QWidget *parent = nullptr);
 
-		void reloadData(Banner *);
+	signals:
+		void quantityChosen(int);
+
+	protected:
+		QSignalMapper  *m_mapper;
 
 };
 

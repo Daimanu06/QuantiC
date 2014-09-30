@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/texts">
+        <file alias="license">res/documents/license</file>
+    </qresource>
+    <qresource prefix="/texts" lang="fr">
+        <file alias="license">res/documents/fr/license</file>
+    </qresource>
+</RCC>

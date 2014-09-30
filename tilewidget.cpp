@@ -26,9 +26,8 @@ void TileButton::paintEvent(QPaintEvent *event) {
 }
 
 
-TileWidget::TileWidget(const Banner *banner, QWidget *parent) :
-	QWidget(parent),
-	m_mapper(new QSignalMapper(this))
+TileWidget::TileWidget(QWidget *parent) :
+	HomeWidget(parent)
 {
 
 	const QSize button_size(128, 128);
@@ -42,7 +41,7 @@ TileWidget::TileWidget(const Banner *banner, QWidget *parent) :
 		m_mapper->setMapping(button, i+1);
 	}
 
-	connect(m_mapper, SIGNAL(mapped(int)), banner, SLOT(setCurrentIndex(int)));
+	connect(m_mapper, SIGNAL(mapped(int)), this, SIGNAL(quantityChosen(int)));
 
 	setLayout(layout);
 }

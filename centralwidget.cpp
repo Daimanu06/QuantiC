@@ -13,6 +13,7 @@ CentralWidget::CentralWidget(QWidget *parent) :
 	ui_layout->addWidget(ui_bn);
 	ui_layout->addWidget(ui_sw);
 
+	connect(ui_sw, &StackedWidget::quantityChosen, ui_bn, &Banner::setCurrentIndex);
 	connect(ui_bn, &Banner::currentIndexChanged, ui_sw, &StackedWidget::setCurrentIndex);
 
 	ui_bn->setCurrentIndex( 0 );
@@ -22,7 +23,7 @@ CentralWidget::CentralWidget(QWidget *parent) :
 
 void CentralWidget::reloadData() {
 	ui_bn->reloadData();
-	ui_sw->reloadData(ui_bn);
+	ui_sw->reloadData();
 
 	QWidget::update();
 }

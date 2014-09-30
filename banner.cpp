@@ -14,13 +14,13 @@ BannerButton::BannerButton(QWidget *parent) :
 {
 	setFixedHeight(80);
 	setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-}
-void BannerButton::paintEvent(QPaintEvent *e) {
-	static QFont font;
+	QFont font;
 	font.setPointSize(30);
+	setFont(font);
+}
 
+void BannerButton::paintEvent(QPaintEvent *e) {
 	QPainter p(this);
-	p.setFont (font);
 	p.setPen  (Qt::black);
 	p.setBrush(Qt::black);
 	p.drawText(rect(), Qt::AlignVCenter | Qt::AlignLeft, text());
@@ -36,17 +36,20 @@ BannerArrow::BannerArrow(const QPixmap& pix , const QPixmap& pix_press, QWidget 
 {
 	setFixedSize(50, 80);
 }
+
 void BannerArrow::paintEvent(QPaintEvent *e) {
 	QPainter p(this);
 	if(!m_pix_released.isNull() && !m_pix_pressed.isNull())
 		p.drawPixmap(rect(), m_pressed ? m_pix_pressed : m_pix_released);
 	e->accept();
 }
+
 void BannerArrow::mousePressEvent(QMouseEvent *e) {
 	QAbstractButton::mousePressEvent(e);
 	m_pressed = true;
 	update();
 }
+
 void BannerArrow::mouseReleaseEvent(QMouseEvent *e) {
 	QAbstractButton::mouseReleaseEvent(e);
 	m_pressed = false;
@@ -83,7 +86,7 @@ Banner::Banner(QWidget *parent) :
 }
 
 void Banner::setCurrentIndex(int index) {
-	auto toSentenceCase = [&](QString str)->QString&{
+	auto toSentenceCase = [&](QString str)->QString{
 		str    = str.toLower();
 		str[0] = str[0].toUpper();
 		return str;
@@ -102,15 +105,19 @@ void Banner::setCurrentIndex(int index) {
 	m_image->setPixmap(pix.scaled(m_image->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
 	emit currentIndexChanged(m_index);
 }
+
 void Banner::decreaseCurrentIndex() {
 	setCurrentIndex((m_index > 0) ? m_index-1 : datamanager.count());
 }
+
 void Banner::increaseCurrentIndex() {
 	setCurrentIndex((m_index + 1) % (datamanager.count()+1));
 }
+
 void Banner::returnHome() {
 	setCurrentIndex(0);
 }
+
 int Banner::currentIndex() const {
 	return m_index;
 }

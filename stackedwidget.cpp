@@ -6,20 +6,41 @@
 #include "quantitywidget.h"
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QScrollArea>
-#include "homewidget.h"
 
+/** StackedWidgetHome **/
+StackedWidgetHome::StackedWidgetHome(QWidget *parent) :
+	QScrollArea(parent)
+{
+	setWidgetResizable(true);
+	setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+	connect(&Settings::getInstance(), &Settings::homeLayoutChanged, this, &StackedWidgetHome::setHomeLayout);
+	setHomeLayout(Settings::getInstance().homeLayout());
+}
+
+void StackedWidgetHome::setHomeLayout(Settings::HomeLayout newlayout) {
+	HomeWidget *wid;
+	if(newlayout == Settings::H_List)
+		wid = new ListWidget(this);
+	else
+		wid = new TileWidget(this);
+	setWidget(wid);
+	connect(wid, &HomeWidget::quantityChosen, this, &StackedWidgetHome::quantityChosen);
+}
+
+/** StackedWidget **/
 StackedWidget::StackedWidget(QWidget *parent) :
 	QStackedWidget(parent)
 {}
 
-void StackedWidget::clear() {
-	for(QWidget *widget : findChildren<QWidget*>(QString(), Qt::FindChildrenRecursively))
+void StackedWidget::removePages() {
+	for(QWidget *widget : findChildren<QWidget*>(QString(), Qt::FindChildrenRecursively)) {
+		removeWidget(widget);
 		widget->deleteLater();
-
+	}
 }
 
-void StackedWidget::reloadData(Banner *banner) {
-	clear();
+void StackedWidget::reloadData() {
+	removePages();
 
 	DataManager& manager = DataManager::getInstance();
 
@@ -29,9 +50,9 @@ void StackedWidget::reloadData(Banner *banner) {
 	}
 
 	//Home
-	HomeWidget *home = new HomeWidget(this);
-	home->reloadData(banner);
+	StackedWidgetHome *home = new StackedWidgetHome(this);
 	addWidget(home);
+	connect(home, &StackedWidgetHome::quantityChosen, this, &StackedWidget::quantityChosen);
 
 	//all quantities
 	for(Quantity& quantity : manager) {

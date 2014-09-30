@@ -5,6 +5,10 @@
 
 class QLayout;
 
+/**
+ * @class PrefixWidget
+ * @brief Base class of Prefix classes.
+ */
 class PrefixWidget  : public QComboBox {
 	Q_OBJECT
 
@@ -22,6 +26,9 @@ class PrefixWidget  : public QComboBox {
 
 };
 
+/**
+ * @class PrefixNone
+ */
 class PrefixNone : public PrefixWidget {
 	Q_OBJECT
 
@@ -34,6 +41,9 @@ class PrefixNone : public PrefixWidget {
 
 };
 
+/**
+ * @class PrefixPow3
+ */
 class PrefixPow3 : public PrefixWidget {
 	Q_OBJECT
 
@@ -46,6 +56,9 @@ class PrefixPow3 : public PrefixWidget {
 
 };
 
+/**
+ * @class PrefixAll
+ */
 class PrefixAll  : public PrefixWidget {
 	Q_OBJECT
 

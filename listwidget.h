@@ -1,17 +1,15 @@
 #ifndef LISTWIDGET_H
 #define LISTWIDGET_H
 
-#include <QtWidgets/QWidget>
+#include "homewidget.h"
 #include <QtWidgets/QAbstractButton>
 
-class Banner;
 class Quantity;
-class QSignalMapper;
 
 /**
  * @class ListButton
  * @ingroup GUI
- * @brief Button used in list layout.
+ * @brief Button used in ListWidget.
  *
  * @warning Should not be directly used.
  * @see ListWidget
@@ -33,20 +31,17 @@ class ListButton : public QAbstractButton {
 /**
  * @class ListWidget
  * @ingroup GUI
- * @brief One of the two home widget.
+ * @brief One possible home view.
  *
  * Display the quantities in a vertical list with an icon and a text.
  * @see HomeWidget
  * @see TileWidget
  */
-class ListWidget : public QWidget {
+class ListWidget : public HomeWidget {
 	Q_OBJECT
 
 	public:
-		explicit ListWidget(const Banner *, QWidget *parent = nullptr);
-
-	private:
-		QSignalMapper  *m_mapper;
+		explicit ListWidget(QWidget *parent = nullptr);
 
 };
 

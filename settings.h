@@ -5,18 +5,6 @@
 #include <QtCore/QString>
 #include <QtCore/QRect>
 
-const QString application_path = ".";
-
-/*
-#if defined(Q_OS_LINUX) || defined(Q_OS_MAC)
-	const QString application_path = "/usr/share/Qter";
-#endif
-#if defined(Q_OS_WIN32)
-	const QString application_path = "%PROGRAMFILES%/Qter";
-	//"%CSIDL_PROGRAM_FILES/";
-#endif
-*/
-
 /**
  * @class Settings
  * @ingroup Settings
@@ -54,8 +42,7 @@ class Settings : public QObject {
 		Q_PROPERTY(SymbolType symbol_type      READ symbolType            WRITE setSymbolType          NOTIFY symbolTypeChanged)
 		Q_PROPERTY(PrefixPolicy prefix_policy  READ prefixPolicy          WRITE setPrefixPolicy        NOTIFY prefixPolicyChanged)
 		Q_PROPERTY(HomeLayout home_layout      READ homeLayout            WRITE setHomeLayout          NOTIFY homeLayoutChanged)
-		Q_PROPERTY(QString data_location       READ dataLocation          WRITE setDataLocation        NOTIFY dataLocationChanged)
-		Q_PROPERTY(QString icons_location      READ iconsLocation         WRITE setIconsLocation       NOTIFY iconsLocationChanged)
+		Q_PROPERTY(QString data_dir            READ dataDirectory         WRITE setDataDirectory       NOTIFY dataLocationChanged)
 
 	signals:
 		void symbolTypeChanged(SymbolType);
@@ -71,8 +58,7 @@ class Settings : public QObject {
 		SymbolType symbolType() const;
 		PrefixPolicy prefixPolicy() const;
 		HomeLayout homeLayout() const;
-		QString dataLocation() const;
-		QString iconsLocation() const;
+		QString dataDirectory() const;
 
 	public slots: //setters
 		void setWindowGeometry(const QRect &);
@@ -81,8 +67,7 @@ class Settings : public QObject {
 		void setSymbolType(int);
 		void setPrefixPolicy(int);
 		void setHomeLayout(int);
-		void setDataLocation(const QString &);
-		void setIconsLocation(const QString &);
+		void setDataDirectory(const QString &);
 
 	private:
 		QRect window_geometry;
@@ -91,7 +76,7 @@ class Settings : public QObject {
 		SymbolType symbol_type;
 		PrefixPolicy prefix_policy;
 		HomeLayout home_layout;
-		QString data_location;
+		QString data_dir;
 		QString icons_location;
 
 };

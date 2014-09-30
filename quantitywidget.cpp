@@ -38,4 +38,3 @@ void QuantityWidget::aValueHasChanged(int index) {
 		unit_widget->blockSignals(false); //…then, make signals effective again
 	}
 }
-

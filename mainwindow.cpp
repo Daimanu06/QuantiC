@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "centralwidget.h"
 #include "settings.h"
-#include <QtWidgets/QApplication> //qApp::aboutQt(), QApplication::applicationName()
+#include <QtWidgets/QApplication>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QLabel>
@@ -15,7 +15,6 @@ MainWindow::MainWindow(Settings& set, QWidget *parent) :
 	setGeometry(settings.windowGeometry());
 	settings.isWindowMaximized() ? showMaximized() : showNormal();
 
-	setWindowIcon(QIcon(":/icon/app"));
 	setWindowTitle(QApplication::applicationName());
 
 	createMenuBar();
@@ -44,14 +43,15 @@ void MainWindow::createMenuBar() {
 
 	menuHelp->addAction(QIcon(":/icon/about"),   tr("About"),    this, SIGNAL(showDialogAbout()),    QKeySequence(Qt::Key_F2));
 	menuHelp->addAction(QIcon(":/icon/about"),   tr("About Qt"), qApp, SLOT(aboutQt()),              QKeySequence(Qt::Key_F3));
-	menuHelp->addAction(QIcon(":/icon/about"),   tr("Website"),  this, SIGNAL(visitWebsite()),       QKeySequence(Qt::Key_F4));
-	menuHelp->addAction(QIcon(":/icon/about"),   tr("Licenses"), this, SIGNAL(showDialogLicenses()), QKeySequence(Qt::Key_F5));
+	menuHelp->addAction(QIcon(":/icon/about"),   tr("License"),  this, SIGNAL(showDialogLicense()),  QKeySequence(Qt::Key_F4));
+	menuHelp->addAction(QIcon(":/icon/about"),   tr("Website"),  this, SIGNAL(visitWebsite()),       QKeySequence(Qt::Key_F5));
 
 	menuBar->addMenu(menuApp);
 	menuBar->addMenu(menuHelp);
 
 	setMenuBar(menuBar);
 }
+
 void MainWindow::createStatusBar() {
 	QStatusBar *statusBar = new QStatusBar(this);
 	statusBar->addPermanentWidget(new QLabel(QLocale::system().bcp47Name()));
@@ -67,10 +67,7 @@ void MainWindow::resetWindow() {
 void MainWindow::reloadData() {
 	DataManager &manager = DataManager::getInstance();
 	manager.clear();
-	manager.loadQuantities(
-			QDir( settings.dataLocation(),  QString("*.xml"), QDir::Name, QDir::Files ),
-			QDir( settings.iconsLocation(), QString("*.png"), QDir::Name, QDir::Files )
-	);
+	manager.loadQuantities( QDir( settings.dataDirectory()) );
 	dynamic_cast<CentralWidget*>( centralWidget() )->reloadData();
 }
 

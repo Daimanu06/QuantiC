@@ -26,7 +26,6 @@ class DialogTabData : public QWidget {
 
 	private:
 		BrowseFilesWidget *ui_data_directory;
-		BrowseFilesWidget *ui_icon_directory;
 		QComboBox         *ui_symbol_type;
 		QComboBox         *ui_prefix_policy;
 

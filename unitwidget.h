@@ -3,7 +3,6 @@
 
 #include <QtWidgets/QWidget>
 #include "prefixwidget.h"
-#include "data.h"
 
 class NumberInput;
 class QLabel;
@@ -12,7 +11,7 @@ class Unit;
 /**
  * @class UnitWidget
  * @ingroup GUI
- * @brief represents one Unit.
+ * @brief Widget representing an Unit.
  *
  * LineEdit, ComboBox and Label in a horizontal layout.
  */
@@ -23,8 +22,8 @@ class UnitWidget : public QWidget {
 		explicit UnitWidget(const Unit &unit, bool prefixesAllowed, QWidget *parent = nullptr);
 
 	signals:
-		void valueChanged(double);
-		void valueChanged(QString&);
+		void valueChanged(double);   ///<Emitted when the value or the prefix has changed.
+		void valueChanged(QString&); ///<Emitted when the value or the prefix has changed.
 
 	public slots:
 		void setValue(double value);
@@ -32,8 +31,7 @@ class UnitWidget : public QWidget {
 
 	public:
 		/**
-		 * @fn value
-		 * Returns the value computed from input's values (number from lineEdit and exponent from comboBox).
+		 * @brief Returns the value computed with the value and the prefix.
 		 * @return the value computed.
 		 */
 		double value() const;

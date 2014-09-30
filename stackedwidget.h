@@ -2,8 +2,29 @@
 #define STACKEDWIDGET_H
 
 #include <QtWidgets/QStackedWidget>
+#include <QtWidgets/QScrollArea>
+#include "settings.h"
 
 class Banner;
+
+/**
+ * @class StackedWidgetHome
+ * @brief First page of the StackedLayout.
+ *
+ * Changes dynamically its view when the settings "HomeLayout" changes.
+ */
+class StackedWidgetHome : public QScrollArea {
+	Q_OBJECT
+
+	public:
+		StackedWidgetHome(QWidget *parent = nullptr);
+
+	public slots:
+		void setHomeLayout(Settings::HomeLayout); ///<Changes the home layout.
+
+	signals:
+		void quantityChosen(int);
+};
 
 /**
  * @class StackedWidget
@@ -16,10 +37,13 @@ class StackedWidget : public QStackedWidget {
 	public:
 		explicit StackedWidget(QWidget *parent = nullptr);
 
-		void clear();
+		void removePages(); ///<Remove all the pages.
 
 	public slots:
-		void reloadData(Banner *);
+		void reloadData();
+
+	signals:
+		void quantityChosen(int);
 
 };
 

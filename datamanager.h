@@ -23,10 +23,10 @@ class DataManager : private QList< Quantity > {
 		typedef QuantityList::Iterator Iterator;
 
 	private: //ctor, dtor and operator=
-		DataManager();
 		DataManager(const DataManager&)  = delete;
 		DataManager(      DataManager&&) = delete;
-		~DataManager();
+		DataManager()  = default;
+		~DataManager() = default;
 		DataManager& operator=(const DataManager&)  = delete;
 		DataManager& operator=(      DataManager&&) = delete;
 
@@ -42,10 +42,9 @@ class DataManager : private QList< Quantity > {
 		/**
 		 * @fn loadQuantities
 		 * List, validate and load quantities files of the given directory.
-		 * @param quantities_dir The directory that contains Quantities.
-		 * @param icons_dir      The directory that contains icons.
+		 * @param data_dir The directory that contains all datas.
 		 */
-		void loadQuantities(const QDir&, const QDir&);
+		void loadQuantities(const QDir&);
 
 	private: //Private loading functions
 		/**

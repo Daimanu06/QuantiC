@@ -7,12 +7,12 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialogButtonBox>
+#include "compilation_infos.h"
 
 /***** Tab Data *****/
 DialogTabData::DialogTabData(Settings &settings, QWidget *parent) :
 	QWidget(parent),
-	ui_data_directory(new BrowseFilesWidget(settings.dataLocation(),  this)),
-	ui_icon_directory(new BrowseFilesWidget(settings.iconsLocation(), this)),
+	ui_data_directory(new BrowseFilesWidget(settings.dataDirectory(),  this)),
 	ui_symbol_type   (new QComboBox),
 	ui_prefix_policy (new QComboBox)
 {
@@ -23,26 +23,23 @@ DialogTabData::DialogTabData(Settings &settings, QWidget *parent) :
 
 	ui_prefix_policy->addItems( {tr("Full (with c, d, da and h)"), tr("Only power of 3"), tr("Off")} );
 	ui_prefix_policy->setCurrentIndex(settings.prefixPolicy());
-	ui_prefix_policy->setDisabled(true);
+	//ui_prefix_policy->setDisabled(true);
+	ui_prefix_policy->setToolTip("Not implemented yet.");
 
 	ui_layout->addRow(tr("Data location"),  ui_data_directory);
-	ui_layout->addRow(tr("Icons location"), ui_icon_directory);
 	ui_layout->addRow(tr("Symbols type"),   ui_symbol_type);
 	ui_layout->addRow(tr("Prefix policy"),  ui_prefix_policy);
 
 	setLayout(ui_layout);
 
 	connect(ui_data_directory, &BrowseFilesWidget::locationChanged,
-			&settings,         &Settings::setDataLocation
-	);
-	connect(ui_icon_directory, &BrowseFilesWidget::locationChanged,
-			&settings,         &Settings::setIconsLocation
+			&settings,         &Settings::setDataDirectory
 	);
 	connect(ui_symbol_type, static_cast<void (QComboBox::*)(int)> (&QComboBox::currentIndexChanged),
-			&settings, &Settings::setSymbolType
+			&settings,      &Settings::setSymbolType
 	);
 	connect(ui_prefix_policy, static_cast<void (QComboBox::*)(int)> (&QComboBox::currentIndexChanged),
-			&settings, &Settings::setPrefixPolicy
+			&settings,        &Settings::setPrefixPolicy
 	);
 }
 
@@ -101,19 +98,29 @@ DialogSettings::DialogSettings(Settings& settings, QWidget *parent) :
 	setWindowIcon(QIcon(":/icon/settings"));
 	setWindowTitle(tr("Settings"));
 
+#ifdef OS_MOBILE
+	setWindowState(windowState() | Qt::WindowMaximized);
+#endif
+
 	ui_layout->addWidget(ui_tab_widget);
 	ui_tab_widget->addTab(ui_data_tab, tr("Data"));
 	ui_tab_widget->addTab(ui_home_tab, tr("Home"));
+#ifndef OS_MOBILE
 	ui_tab_widget->addTab(ui_win_tab,  tr("Window"));
+#endif
 
 	ui_layout->addWidget(ui_btn_box);
 	setLayout(ui_layout);
 
 	connect(ui_win_tab,  &DialogTabWindow::resetMainWindow,   this, &DialogSettings::resetMainWindow);
+
+#ifndef OS_MOBILE
 	connect(ui_btn_box,  &QDialogButtonBox::rejected,         this, &DialogSettings::close);
 	//connect(ui_btn_box, &QDialogButtonBox::helpRequested,  [](){;});
 
 	ui_btn_box->button(QDialogButtonBox::Help)->setDisabled(true);
+	ui_btn_box->button(QDialogButtonBox::Help)->setToolTip("Not implemented yet.");
+#endif
 
 	resize(sizeHint()); //Center the dialog inside its parent
 }

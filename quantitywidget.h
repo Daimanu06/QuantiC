@@ -12,7 +12,7 @@ class Quantity;
 /**
  * @class QuantityWidget
  * @ingroup GUI
- * @brief Widget that show Units vertically.
+ * @brief This widget shows Units vertically.
  */
 class QuantityWidget : public QWidget {
 	Q_OBJECT

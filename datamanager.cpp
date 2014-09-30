@@ -5,32 +5,40 @@
 #include <QtGui/QPixmap>
 #include <QtXml/QDomDocument>
 
-DataManager::DataManager() {}
-DataManager::~DataManager() {}
-
 DataManager& DataManager::getInstance() {
 	static DataManager instance;
 	return instance;
 }
 
-void DataManager::loadQuantities(const QDir& quantities_dir, const QDir& icons_dir) {
-	if( !quantities_dir.exists() || !icons_dir.exists() ) {
-		qWarning( "Error: incorrect application's file tree structure.\nNothing will be loaded." );
+void DataManager::loadQuantities(const QDir& data_dir) {
+	if( !data_dir.exists() ) {
+		qWarning( "Error: incorrect data path.\nNothing will be loaded." );
 		return;
 	}
 
-	QFile order_file(quantities_dir.path() + "/order");
+	QFile order_file(data_dir.path() + "/order");
 	order_file.open(QIODevice::ReadOnly | QIODevice::Text);
 	if( !order_file.exists() ) {
 		qWarning("Error: order file is missing.\nNothing will be loaded.");
 		return;
 	}
 
+	QDir quantities_dir( data_dir.path() + "/quantities",  QString("*.xml"), QDir::Name, QDir::Files );
+	QDir icons_dir     ( data_dir.path() + "/icons",       QString("*.png"), QDir::Name, QDir::Files );
+
 	//Read order file
 	QString line;
 	while( !order_file.atEnd() ) {
 		line = order_file.readLine();
 		line.remove('\n');
+
+		//Try to open icon
+		QPixmap icon;
+		QString icon_path = icons_dir.path() + '/' + line + ".png";
+		if( !icon.load(icon_path) ) {
+			qWarning( "Icon for \"%s\" was not found.", qPrintable(line) );
+			icon.load(":/icon/no_icon");
+		}
 
 		//Try to open XML file.
 		QFile file( quantities_dir.path() + '/' + line + ".xml" );
@@ -48,9 +56,7 @@ void DataManager::loadQuantities(const QDir& quantities_dir, const QDir& icons_d
 			continue;
 		}
 
-		quantities.push_back(
-				loadQuantity( document, QPixmap(icons_dir.path() + '/' + line + ".png") )
-		);
+		quantities.push_back( loadQuantity( document, icon ) );
 	}
 	order_file.close();
 }
@@ -72,6 +78,8 @@ Quantity DataManager::loadQuantity(const QDomDocument& xml_document, const QPixm
 		quantity.push_back( loadUnit(unit_elem, baseunit) );
 		unit_elem = unit_elem.nextSiblingElement("unit");
 	}
+
+	qDebug("Quantity \"%s\" loaded.", qPrintable(root.attribute("name")));
 	return quantity;
 }
 
@@ -139,18 +147,23 @@ Unit DataManager::loadUnit(const QDomElement &unit_element, const Unit &base_uni
 bool DataManager::isempty() const noexcept {
 	return quantities.empty();
 }
+
 DataManager::Iterator DataManager::begin() noexcept {
 	return quantities.begin();
 }
+
 DataManager::Iterator DataManager::end() noexcept {
 	return quantities.end();
 }
+
 int DataManager::count() const noexcept {
 	return quantities.count();
 }
+
 const DataManager::value_type &DataManager::at(int i) const {
 	return quantities.at(i);
 }
+
 void DataManager::clear() {
 	quantities.clear();
 }

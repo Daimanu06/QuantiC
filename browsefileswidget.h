@@ -9,7 +9,7 @@ class QPushButton;
 /**
  * @class BrowseFilesWidget
  * @ingroup GUI
- * @brief Label, LineEdit and PushButton horizontaly aligned.
+ * @brief LineEdit and PushButton horizontaly aligned.
  *
  * The user inputs a directory where the software can search files.
  * Used in the settings dialog window.

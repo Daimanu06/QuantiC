@@ -2,12 +2,19 @@
 #define TILEWIDGET_H
 
 #include "data.h"
-#include <QtWidgets/QWidget>
+#include "homewidget.h"
 #include <QtWidgets/QAbstractButton>
 
-class QSignalMapper;
 class Banner;
 
+/**
+ * @class TileButton
+ * @ingroup GUI
+ * @brief Button used in TileWidget.
+ *
+ * @warning Should not be directly used.
+ * @see TileWidget
+ */
 class TileButton : public QAbstractButton {
 	Q_OBJECT
 
@@ -24,20 +31,17 @@ class TileButton : public QAbstractButton {
 
 /**
  * @class TileWidget
- * @brief One of the two home widget.
+ * @brief One possible home view.
  *
  * Display the quantities icons in a expandable grid.
  * @see StackedWidget
  * @see ListWidget
  */
-class TileWidget : public QWidget {
+class TileWidget : public HomeWidget {
 	Q_OBJECT
 
 	public:
-		explicit TileWidget(const Banner *, QWidget *parent = nullptr);
-
-	private:
-		QSignalMapper *m_mapper;
+		explicit TileWidget(QWidget *parent = nullptr);
 };
 
 #endif // TILEWIDGET_H

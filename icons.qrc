@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file alias="app128">res/icons/app128.png</file>
+        <file alias="app256">res/icons/app256.png</file>
+        <file alias="home">res/icons/home.png</file>
+        <file alias="settings">res/icons/settings.png</file>
+        <file alias="about">res/icons/star.png</file>
+        <file alias="quit">res/icons/shutdown.png</file>
+        <file alias="no_icon">res/icons/no_icon.png</file>
+    </qresource>
+    <qresource prefix="/arrow">
+        <file alias="left">res/icons/arrow_left.png</file>
+        <file alias="left_press">res/icons/arrow_left_press.png</file>
+        <file alias="right">res/icons/arrow_right.png</file>
+        <file alias="right_press">res/icons/arrow_right_press.png</file>
+    </qresource>
+</RCC>

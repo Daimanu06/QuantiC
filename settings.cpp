@@ -16,9 +16,8 @@ Settings::Settings() :
 	window_geometry_saved = qs.value("window-save", true).toBool();
 	qs.endGroup();
 
-	qs.beginGroup("locations");
-	data_location  = qs.value("data",  application_path+"/data" ).toString();
-	icons_location = qs.value("icons", application_path+"/icons").toString();
+	qs.beginGroup("directories");
+	data_dir  = qs.value("data",  QCoreApplication::applicationDirPath()+"/data" ).toString();
 	qs.endGroup();
 
 	qs.beginGroup("home");
@@ -44,9 +43,8 @@ Settings::~Settings() {
 	}
 	qs.endGroup();
 
-	qs.beginGroup("locations");
-	qs.setValue("data",  data_location);
-	qs.setValue("icons", icons_location);
+	qs.beginGroup("directories");
+	qs.setValue("data",  data_dir);
 	qs.endGroup();
 
 	qs.beginGroup("home");
@@ -84,13 +82,10 @@ Settings::HomeLayout Settings::homeLayout() const {
 	return HomeLayout(home_layout % 2);
 }
 
-QString Settings::dataLocation() const {
-	return data_location;
+QString Settings::dataDirectory() const {
+	return data_dir;
 }
 
-QString Settings::iconsLocation() const {
-	return icons_location;
-}
 
 /*** Setters ***/
 void Settings::setWindowGeometry(const QRect& geometry) {
@@ -129,16 +124,9 @@ void Settings::setHomeLayout(int l) {
 	emit homeLayoutChanged(layout);
 }
 
-void Settings::setDataLocation(const QString &loc) {
-	if(data_location == loc)
+void Settings::setDataDirectory(const QString &loc) {
+	if(data_dir == loc)
 		return;
-	data_location = loc;
+	data_dir = loc;
 	emit dataLocationChanged(loc);
-}
-
-void Settings::setIconsLocation(const QString &loc) {
-	if(icons_location == loc)
-		return;
-	icons_location = loc;
-	emit iconsLocationChanged(loc);
 }
