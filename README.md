@@ -5,7 +5,7 @@ Thank you for downloading QuantiC.
 To compile QuantiC you need:
 
 0. [The source code](https://github.com/Daimanu06/QuantiC)
-0. Qt version 5.1 or greater
+0. [Qt](http://qt-project.org) version 5.1 or greater
 0. a C++ compiler supporting C++11
 
 # Setup
@@ -21,7 +21,7 @@ In the first use of the program you may have some followed issues
 
 ## No data found
 
-This may appen at the first use of the program. See Setup.
+This may happen at the first use of the program. See Setup.
 Check the data folder's structure, it must contain a "icons" folder with png files, and a "quantities" folder with xml files and an "order" text file.
 
 ## No localized texts
@@ -31,7 +31,9 @@ Please note that some langages may miss.
 
 # Notes
 
-QuantiC creates a preferences file in the user's folder.
+QuantiC creates a preferences file in the user's folder. e.g.:
+C:\*user folder*\AppData\Roaming\Daimanu\Quanitc.ini on Microsoft Windows
+~/.config/Daimanu/QuantiC.ini on GNU/Linux
 
 # Contact
 
