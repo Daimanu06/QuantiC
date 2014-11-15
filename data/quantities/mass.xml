@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<quantity name="masse" lang="fr_FR" prefixsAllowed="yes">
+  <baseunit name="gramme">
+    <symbols>
+      <ascii>g</ascii>
+      <unicode>g</unicode>
+    </symbols>
+  </baseunit>
+  <unit name="tonne">
+    <symbols>
+      <ascii>t</ascii>
+      <unicode>t</unicode>
+    </symbols>
+    <tobase>
+      <times>1000000</times>
+    </tobase>
+  </unit>
+  <unit name="carat">
+    <symbols>
+      <ascii>ct</ascii>
+      <unicode>ct</unicode>
+    </symbols>
+    <tobase>
+      <divided>5</divided>
+    </tobase>
+  </unit>
+  <unit name="grain">
+    <symbols>
+      <ascii>gr</ascii>
+      <unicode>gr</unicode>
+    </symbols>
+    <tobase>
+      <times>64.79891</times>
+      <divided>1000</divided>
+    </tobase>
+  </unit>
+  <unit name="livre">
+    <symbols>
+      <ascii>lb</ascii>
+      <unicode>℔</unicode>
+    </symbols>
+    <tobase>
+      <times>0453.59237</times>
+    </tobase>
+  </unit>
+</quantity>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<quantity name="energie" lang="fr_FR" prefixsAllowed="yes">
+  <baseunit name="joule">
+    <symbols>
+      <ascii>J</ascii>
+      <unicode>J</unicode>
+    </symbols>
+  </baseunit>
+  <unit name="électron-volt">
+    <symbols>
+      <ascii>eV</ascii>
+      <unicode>㋎</unicode>
+    </symbols>
+    <tobase>
+      <times>1</times>
+    </tobase>
+  </unit>
+  <unit name="erg">
+    <symbols>
+      <ascii>erg</ascii>
+      <unicode>㋍</unicode>
+    </symbols>
+    <tobase>
+      <divided>10000000</divided>
+    </tobase>
+  </unit>
+  <unit name="calorie (international)">
+    <symbols>
+      <ascii>cal</ascii>
+      <unicode>㎈</unicode>
+    </symbols>
+    <tobase>
+      <times>4.1868</times>
+    </tobase>
+  </unit>
+  <unit name="kilowattheure">
+    <symbols>
+      <ascii>kWh</ascii>
+      <unicode>㎾h</unicode>
+    </symbols>
+    <tobase>
+      <times>3600000</times>
+    </tobase>
+  </unit>
+</quantity>

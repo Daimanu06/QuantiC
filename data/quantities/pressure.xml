@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<quantity name="pression" lang="fr_FR" prefixsAllowed="yes">
+  <baseunit name="pascal">
+    <symbols>
+      <ascii>Pa</ascii>
+      <unicode>㎩</unicode>
+    </symbols>
+  </baseunit>
+  <unit name="bar">
+    <symbols>
+      <ascii>bar</ascii>
+      <unicode>㍴</unicode>
+    </symbols>
+    <tobase>
+      <times>100000</times>
+    </tobase>
+  </unit>
+  <unit name="livre par pouce carré">
+    <symbols>
+      <ascii>psi</ascii>
+      <unicode>psi</unicode>
+    </symbols>
+    <tobase>
+      <times>6894.757293168</times>
+    </tobase>
+  </unit>
+  <unit name="torr">
+    <symbols>
+      <ascii>Torr</ascii>
+      <unicode>Torr</unicode>
+    </symbols>
+    <tobase>
+      <times>101325</times>
+      <divided>760</divided>
+    </tobase>
+  </unit>
+  <unit name="barye">
+    <symbols>
+      <ascii>ba</ascii>
+      <unicode>ba</unicode>
+    </symbols>
+    <tobase>
+      <divided>10</divided>
+    </tobase>
+  </unit>
+</quantity>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<quantity name="volume" lang="fr_FR" prefixsAllowed="yes">
+  <baseunit name="mètre cube">
+    <symbols>
+      <ascii>m^3</ascii>
+      <unicode>㎥</unicode>
+    </symbols>
+  </baseunit>
+  <unit name="pouce cube">
+    <symbols>
+      <ascii>cu in</ascii>
+      <unicode>cu ㏌</unicode>
+    </symbols>
+    <tobase>
+      <times>0.000016387064</times>
+    </tobase>
+  </unit>
+  <unit name="pied cube">
+    <symbols>
+      <ascii>cu ft</ascii>
+      <unicode>cu ft</unicode>
+    </symbols>
+    <tobase>
+      <times>0.028316846592</times>
+    </tobase>
+  </unit>
+  <unit name="yard cube">
+    <symbols>
+      <ascii>cu yd</ascii>
+      <unicode>cu yd</unicode>
+    </symbols>
+    <tobase>
+      <times>0.764554857984</times>
+    </tobase>
+  </unit>
+  <unit name="mile cube">
+    <symbols>
+      <ascii>cu mil</ascii>
+      <unicode>cu ㏕</unicode>
+    </symbols>
+    <tobase>
+      <times>4168181825.440579584</times>
+    </tobase>
+  </unit>
+</quantity>

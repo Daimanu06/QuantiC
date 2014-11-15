@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<quantity name="accélération angulaire" lang="fr_FR" prefixsAllowed="yes">
+  <baseunit name="mètre par seconde au carré">
+    <symbols>
+      <ascii>rad/s²</ascii>
+      <unicode>㎯</unicode>
+    </symbols>
+  </baseunit>
+</quantity>

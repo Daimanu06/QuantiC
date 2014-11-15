@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<quantity name="angle plat" lang="fr_FR" prefixsAllowed="no">
+  <baseunit name="radian">
+    <symbols>
+      <ascii>rad</ascii>
+      <unicode>㎭</unicode>
+    </symbols>
+  </baseunit>
+  <unit name="degré">
+    <symbols>
+      <ascii>°</ascii>
+      <unicode>°</unicode>
+    </symbols>
+    <tobase>
+      <divided>57.295779513</divided>
+    </tobase>
+  </unit>
+  <unit name="grade">
+    <symbols>
+      <ascii>g</ascii>
+      <unicode>g</unicode>
+    </symbols>
+    <tobase>
+      <divided>63.661977237</divided>
+    </tobase>
+  </unit>
+  <unit name="tour">
+    <symbols>
+      <ascii>t</ascii>
+      <unicode>t</unicode>
+    </symbols>
+    <tobase>
+      <times>6.283185307</times>
+    </tobase>
+  </unit>
+</quantity>

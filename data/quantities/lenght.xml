@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<quantity name="longueur" lang="fr_FR" prefixsAllowed="yes">
+  <baseunit name="mètre">
+    <symbols>
+      <ascii>m</ascii>
+      <unicode>m</unicode>
+    </symbols>
+  </baseunit>
+  <unit name="pouce">
+    <symbols>
+      <ascii>in</ascii>
+      <unicode>in</unicode>
+    </symbols>
+    <tobase>
+      <times>0.0254</times>
+    </tobase>
+  </unit>
+  <unit name="pied">
+    <symbols>
+      <ascii>ft</ascii>
+      <unicode>ft</unicode>
+    </symbols>
+    <tobase>
+      <times>0.3048</times>
+    </tobase>
+  </unit>
+  <unit name="yard">
+    <symbols>
+      <ascii>yd</ascii>
+      <unicode>yd</unicode>
+    </symbols>
+    <tobase>
+      <times>0.9144</times>
+    </tobase>
+  </unit>
+  <unit name="mile">
+    <symbols>
+      <ascii>mi</ascii>
+      <unicode>mi</unicode>
+    </symbols>
+    <tobase>
+      <times>1609.344</times>
+    </tobase>
+  </unit>
+  <unit name="mile nautique">
+    <symbols>
+      <ascii>nmi</ascii>
+      <unicode>nmi</unicode>
+    </symbols>
+    <tobase>
+      <times>1852</times>
+    </tobase>
+  </unit>
+  <unit name="unité astronomique">
+    <symbols>
+      <ascii>AU</ascii>
+      <unicode>AU</unicode>
+    </symbols>
+    <tobase>
+      <times>149597870700</times>
+    </tobase>
+  </unit>
+  <unit name="année lumière">
+    <symbols>
+      <ascii>ly</ascii>
+      <unicode>ly</unicode>
+    </symbols>
+    <tobase>
+      <times>9460730472580800</times>
+    </tobase>
+  </unit>
+</quantity>

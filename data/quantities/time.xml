@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<quantity name="temps" lang="fr_FR" prefixsAllowed="no">
+  <baseunit name="seconde">
+    <symbols>
+      <ascii>s</ascii>
+      <unicode>s</unicode>
+    </symbols>
+  </baseunit>
+  <unit name="">
+    <symbols>
+      <ascii>m</ascii>
+      <unicode>m</unicode>
+    </symbols>
+    <tobase>
+      <times>60</times>
+    </tobase>
+  </unit>
+  <unit name="">
+    <symbols>
+      <ascii>h</ascii>
+      <unicode>h</unicode>
+    </symbols>
+    <tobase>
+      <times>3600</times>
+    </tobase>
+  </unit>
+  <unit name="">
+    <symbols>
+      <ascii>d</ascii>
+      <unicode>d</unicode>
+    </symbols>
+    <tobase>
+      <times>86400</times>
+    </tobase>
+  </unit>
+</quantity>

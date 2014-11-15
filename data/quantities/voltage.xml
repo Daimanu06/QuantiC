@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<quantity name="tension éléctrique" lang="fr_FR" prefixsAllowed="yes">
+  <baseunit name="volt">
+    <symbols>
+      <ascii>V</ascii>
+      <unicode>V</unicode>
+    </symbols>
+  </baseunit>
+</quantity>

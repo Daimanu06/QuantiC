@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<quantity name="accélération" lang="fr_FR" prefixsAllowed="yes">
+  <baseunit name="mètre par seconde">
+    <symbols>
+      <ascii>m.s^-2</ascii>
+      <unicode>㎨</unicode>
+    </symbols>
+  </baseunit>
+</quantity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<quantity name="force" lang="fr_FR" prefixsAllowed="yes">
+  <baseunit name="newton">
+    <symbols>
+      <ascii>N</ascii>
+      <unicode>N</unicode>
+    </symbols>
+  </baseunit>
+</quantity>

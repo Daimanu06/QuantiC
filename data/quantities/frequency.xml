@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<quantity name="fréquence" lang="fr_FR" prefixsAllowed="yes">
+  <baseunit name="hertz">
+    <symbols>
+      <ascii>Hz</ascii>
+      <unicode>㎐</unicode>
+    </symbols>
+  </baseunit>
+</quantity>

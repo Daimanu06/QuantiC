@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<quantity name="angle solide" lang="fr_FR" prefixsAllowed="no">
+  <baseunit name="Angle solide">
+    <symbols>
+      <ascii>sr</ascii>
+      <unicode>㏛</unicode>
+    </symbols>
+  </baseunit>
+</quantity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<quantity name="puissance" lang="fr_FR" prefixsAllowed="yes">
+  <baseunit name="watt">
+    <symbols>
+      <ascii>W</ascii>
+      <unicode>W</unicode>
+    </symbols>
+  </baseunit>
+</quantity>

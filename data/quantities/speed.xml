@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<quantity name="vitesse" lang="fr_FR" prefixsAllowed="yes">
+  <baseunit name="mètre par seconde">
+    <symbols>
+      <ascii>m/s</ascii>
+      <unicode>㎧</unicode>
+    </symbols>
+  </baseunit>
+  <unit name="mètre par heure">
+    <symbols>
+      <ascii>m/h</ascii>
+      <unicode>m/h</unicode>
+    </symbols>
+    <tobase>
+      <divided>3600</divided>
+    </tobase>
+  </unit>
+  <unit name="mile par heure">
+    <symbols>
+      <ascii>mph</ascii>
+      <unicode>mph</unicode>
+    </symbols>
+    <tobase>
+      <times>0.44704</times>
+    </tobase>
+  </unit>
+  <unit name="mile par minute">
+    <symbols>
+      <ascii>mpm</ascii>
+      <unicode>mpm</unicode>
+    </symbols>
+    <tobase>
+      <times>26.8224</times>
+    </tobase>
+  </unit>
+  <unit name="mile par seconde">
+    <symbols>
+      <ascii>mps</ascii>
+      <unicode>mps</unicode>
+    </symbols>
+    <tobase>
+      <times>1609.344</times>
+    </tobase>
+  </unit>
+</quantity>

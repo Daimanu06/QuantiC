@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<quantity name="surface" lang="fr_FR" prefixsAllowed="yes">
+  <baseunit name="mètre par seconde au carré">
+    <symbols>
+      <ascii>m^2</ascii>
+      <unicode>m²</unicode>
+    </symbols>
+  </baseunit>
+  <unit name="pouce carré">
+    <symbols>
+      <ascii>sq in</ascii>
+      <unicode>sq ㏌</unicode>
+    </symbols>
+    <tobase>
+      <times>0.00064516</times>
+    </tobase>
+  </unit>
+  <unit name="pied carré">
+    <symbols>
+      <ascii>sq ft</ascii>
+      <unicode>sq ft</unicode>
+    </symbols>
+    <tobase>
+      <times>0.09290304</times>
+    </tobase>
+  </unit>
+  <unit name="yard carré">
+    <symbols>
+      <ascii>sq yd</ascii>
+      <unicode>sq yd</unicode>
+    </symbols>
+    <tobase>
+      <times>0.83612736</times>
+    </tobase>
+  </unit>
+  <unit name="mile carré">
+    <symbols>
+      <ascii>sq mil</ascii>
+      <unicode>sq ㏕</unicode>
+    </symbols>
+    <tobase>
+      <times>2589988.110336</times>
+    </tobase>
+  </unit>
+  <unit name="are">
+    <symbols>
+      <ascii>a</ascii>
+      <unicode>a</unicode>
+    </symbols>
+    <tobase>
+      <times>100</times>
+    </tobase>
+  </unit>
+  <unit name="hectare">
+    <symbols>
+      <ascii>ha</ascii>
+      <unicode>㏊</unicode>
+    </symbols>
+    <tobase>
+      <times>10000</times>
+    </tobase>
+  </unit>
+  <unit name="kilomètre carré">
+    <symbols>
+      <ascii>km²</ascii>
+      <unicode>㎢</unicode>
+    </symbols>
+    <tobase>
+      <times>1000000</times>
+    </tobase>
+  </unit>
+  <unit name="millimètre carré">
+    <symbols>
+      <ascii>mm²</ascii>
+      <unicode>㎟</unicode>
+    </symbols>
+    <tobase>
+      <divided>1000000</divided>
+    </tobase>
+  </unit>
+</quantity>

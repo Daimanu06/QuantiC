@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<quantity name="vitesse angulaire" lang="fr_FR" prefixsAllowed="yes">
+  <baseunit name="radian par seconde">
+    <symbols>
+      <ascii>rad/s</ascii>
+      <unicode>㎮</unicode>
+    </symbols>
+  </baseunit>
+</quantity>

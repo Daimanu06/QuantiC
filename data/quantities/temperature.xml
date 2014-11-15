@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<quantity name="température" lang="fr_FR" prefixsAllowed="no">
+  <baseunit name="Kelvin">
+    <symbols>
+      <ascii>K</ascii>
+      <unicode>K</unicode>
+    </symbols>
+    <minimum>0</minimum>
+  </baseunit>
+  <unit name="degré Celsius">
+    <symbols>
+      <ascii>°C</ascii>
+      <unicode>℃</unicode>
+    </symbols>
+    <tobase>
+      <plus>273.15</plus>
+    </tobase>
+  </unit>
+  <unit name="degré Fahrenheit">
+    <symbols>
+      <ascii>°F</ascii>
+      <unicode>℉</unicode>
+    </symbols>
+    <tobase>
+      <plus>459.67</plus>
+      <times>5</times>
+      <divided>9</divided>
+    </tobase>
+  </unit>
+  <unit name="degré Rankine">
+    <symbols>
+      <ascii>°R</ascii>
+      <unicode>°R</unicode>
+    </symbols>
+    <tobase>
+      <times>5</times>
+      <divided>9</divided>
+    </tobase>
+  </unit>
+  <unit name="degré Delisle">
+    <symbols>
+      <ascii>°De</ascii>
+      <unicode>°De</unicode>
+    </symbols>
+    <tobase>
+      <times>-2</times>
+      <divided>3</divided>
+      <plus>373.15</plus>
+    </tobase>
+  </unit>
+  <unit name="degré Newton">
+    <symbols>
+      <ascii>°N</ascii>
+      <unicode>°N</unicode>
+    </symbols>
+    <tobase>
+      <times>100</times>
+      <divided>33</divided>
+      <plus>273.15</plus>
+    </tobase>
+  </unit>
+  <unit name="degré Réaumur">
+    <symbols>
+      <ascii>°Ré</ascii>
+      <unicode>°Ré</unicode>
+    </symbols>
+    <tobase>
+      <times>5</times>
+      <divided>4</divided>
+      <plus>273.15</plus>
+    </tobase>
+  </unit>
+  <unit name="degré Rømer">
+    <symbols>
+      <ascii>°Rø</ascii>
+      <unicode>°Rø</unicode>
+    </symbols>
+    <tobase>
+      <less>7.5</less>
+      <times>40</times>
+      <divided>21</divided>
+      <plus>273.15</plus>
+    </tobase>
+  </unit>
+</quantity>
