@@ -110,12 +110,12 @@ class Quantity : private QList<Unit> {
 		bool    prefixAllowed;
 
 	public: //STL-like interface
-		Iterator begin() const noexcept;
-		Iterator end()   const noexcept;
-		void     push_back(const Unit &u);
-		int      count() const noexcept;
-		Unit&    operator [] (int);
-		const value_type &at(int i) const;
+        using QList<Unit>::begin;
+        using QList<Unit>::end;
+        using QList<Unit>::push_back;
+        using QList<Unit>::count;
+        using QList<Unit>::operator [];
+        using QList<Unit>::at;
 
 	private:
 		Units units;

@@ -41,27 +41,3 @@ Quantity::Quantity(const QString& name, const QPixmap& image) :
 	name(name),
 	image(image)
 {}
-
-Quantity::Iterator Quantity::begin() const noexcept {
-	return units.begin();
-}
-
-Quantity::Iterator Quantity::end() const noexcept {
-	return units.end();
-}
-
-void Quantity::push_back(const Unit &u) {
-	units.push_back(u);
-}
-
-int Quantity::count() const noexcept {
-	return units.count();
-}
-
-const Quantity::value_type &Quantity::at(int i) const {
-	return units.at(i);
-}
-
-Unit& Quantity::operator [] (int i) {
-	return units[i];
-}
