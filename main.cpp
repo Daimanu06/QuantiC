@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
 	QApplication::setOrganizationName  ("Daimanu");
 	QApplication::setOrganizationDomain("http://127.0.0.1"); //TODO: update website url
 	QApplication::setApplicationName   ("QuantiC");
-	QApplication::setApplicationVersion("0.6.0");
+	QApplication::setApplicationVersion("0.6.1");
 	QApplication::setWindowIcon        (QIcon(":/icon/app128"));
 
 	Settings& settings = Settings::getInstance();
