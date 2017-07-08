@@ -1,4 +1,4 @@
-message("This project requires Qt version 5.1 and C++11")
+message("This project requires Qt version 5.1 or greater and C++11")
 
 lessThan(QT_MAJOR_VERSION, 5):lessThan(QT_MINOR_VERSION, 1) {
 	error("This project require at least Qt 5.1")
@@ -35,8 +35,8 @@ HEADERS += \
 	data.h \
 	datamanager.h \
 	settings.h \
-    dialoglicense.h \
-    compilation_infos.h
+	dialoglicense.h \
+	compilation_infos.h
 
 SOURCES += \
 	main.cpp \
@@ -58,8 +58,8 @@ SOURCES += \
 	data.cpp \
 	datamanager.cpp \
 	settings.cpp \
-    dialoglicense.cpp \
-    compilation_infos.cpp
+	dialoglicense.cpp \
+	compilation_infos.cpp
 
 TRANSLATIONS += \
 	QuantiC.en.ts \
