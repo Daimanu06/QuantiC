@@ -12,7 +12,8 @@
       <unicode>㋎</unicode>
     </symbols>
     <tobase>
-      <times>1</times>
+      <times>1.60217733</times>
+      <divided>10000000000000000000</divided>
     </tobase>
   </unit>
   <unit name="erg">

@@ -6,7 +6,7 @@
       <unicode>s</unicode>
     </symbols>
   </baseunit>
-  <unit name="">
+  <unit name="minute">
     <symbols>
       <ascii>m</ascii>
       <unicode>m</unicode>
@@ -15,7 +15,7 @@
       <times>60</times>
     </tobase>
   </unit>
-  <unit name="">
+  <unit name="heure">
     <symbols>
       <ascii>h</ascii>
       <unicode>h</unicode>
@@ -24,7 +24,7 @@
       <times>3600</times>
     </tobase>
   </unit>
-  <unit name="">
+  <unit name="jour">
     <symbols>
       <ascii>d</ascii>
       <unicode>d</unicode>
