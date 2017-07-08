@@ -33,10 +33,9 @@ ListWidget::ListWidget(QWidget *parent) :
 	QGridLayout *layout = new QGridLayout(this);
 	const QSize  button_size(64, 64);
 
-	auto toSentenceCase = [&](QString str)->QString&{
+	auto toSentenceCase = [&](QString str) {
 		str    = str.toLower();
 		str[0] = str[0].toUpper();
-		return str;
 	};
 
 	//Set ListWidget and its children's font
@@ -47,7 +46,9 @@ ListWidget::ListWidget(QWidget *parent) :
 	//Set all the widgets
 	for(int i = 0; i < manager.count(); i++) {
 		ListButton *button = new ListButton(button_size, manager.at(i), this);
-		QPushButton *text = new QPushButton(toSentenceCase(manager.at(i).name));
+		QString name = manager.at(i).name;
+		toSentenceCase(manager.at(i).name);
+		QPushButton *text = new QPushButton(name);
 		text->setStyleSheet("text-align:left; font-size: 16pt;");
 		text->setFlat(true);
 		layout->addWidget(button, i, 0);

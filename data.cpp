@@ -1,4 +1,5 @@
 #include "data.h"
+#include <functional>
 
 typedef std::function<Unit::value_t(Unit::value_t, Unit::value_t)> operate;
 
