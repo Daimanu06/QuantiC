@@ -8,3 +8,5 @@ It is a desktop program written in [C++](https://en.wikipedia.org/wiki/C++) and 
 The source code and the resources are GPL-licensed in version 2.
 
 For [more informations](DOC.md), please refer to the documentation.
+
+Please note that this software is still **in progress**. New unit and translations will come in the future.
