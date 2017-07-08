@@ -84,6 +84,7 @@ RESOURCES += \
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 
 OTHER_FILES += \
+	README.md \
 	doc/README.md \
 	doc/DOC.md \
 	android/AndroidManifest.xml
