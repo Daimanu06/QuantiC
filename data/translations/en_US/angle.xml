@@ -1,0 +1,26 @@
+<translation name="angle">
+	<legalunit>
+		<name>
+			<singular>radian</singular>
+			<plural>radians</plural>
+		</name>
+	</legalunit>
+	<unit>
+		<name>
+			<singular>degree</singular>
+			<plural>degrees</plural>
+		</name>
+	</unit>
+	<unit>
+		<name>
+			<singular>grade</singular>
+			<plural>grades</plural>
+		</name>
+	</unit>
+	<unit>
+		<name>
+			<singular>turn</singular>
+			<plural>turns</plural>
+		</name>
+	</unit>
+</translation>

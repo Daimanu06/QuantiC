@@ -1,0 +1,32 @@
+<translation name="vitesse">
+	<legalunit>
+		<name>
+			<singular>mètre par seconde</singular>
+			<plural>mètres par secondes</plural>
+		</name>
+	</legalunit>
+	<unit name="meter per hour">
+		<name>
+			<singular>mètre par heure</singular>
+			<plural>mètres par heure</plural>
+		</name>
+	</unit>
+	<unit name="mile per hour">
+		<name>
+			<singular>mile par heure</singular>
+			<plural>miles par heure</plural>
+		</name>
+	</unit>
+	<unit name="mile per minute">
+		<name>
+			<singular>mile par minute</singular>
+			<plural>miles par minute</plural>
+		</name>
+	</unit>
+	<unit name="mile per second">
+		<name>
+			<singular>mile par seconde</singular>
+			<plural>miles par seconde</plural>
+		</name>
+	</unit>
+</translation>

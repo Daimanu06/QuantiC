@@ -1,0 +1,32 @@
+<translation name="volume">
+	<legalunit>
+		<name>
+			<singular>mètre cube</singular>
+			<plural>mètres cube</plural>
+		</name>
+	</legalunit>
+	<unit name="cubic inch">
+		<name>
+			<singular>pouce cube</singular>
+			<plural>pouces cubes</plural>
+		</name>
+	</unit>
+	<unit name="cubic foot">
+		<name>
+			<singular>pied cube</singular>
+			<plural>pieds cubes</plural>
+		</name>
+	</unit>
+	<unit name="cubic yard">
+		<name>
+			<singular>yard cube</singular>
+			<plural>yard cubes</plural>
+		</name>
+	</unit>
+	<unit name="cubic mile">
+		<name>
+			<singular>mile cube</singular>
+			<plural>miles cubes</plural>
+		</name>
+	</unit>
+</translation>

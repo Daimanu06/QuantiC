@@ -1,0 +1,44 @@
+<translation name="lenght">
+	<legalunit>
+		<name>
+			<singular>meter</singular>
+			<plural>meters</plural>
+		</name>
+	</legalunit>
+	<unit>
+		<name>
+			<singular>inch</singular>
+			<plural>inches</plural>
+		</name>
+	</unit>
+	<unit>
+		<name>
+			<singular>foot</singular>
+			<plural>feet</plural>
+		</name>
+	</unit>
+	<unit>
+		<name>
+			<singular>yard</singular>
+			<plural>yards</plural>
+		</name>
+	</unit>
+	<unit>
+		<name>
+			<singular>mile</singular>
+			<plural>miles</plural>
+		</name>
+	</unit>
+	<unit>
+		<name>
+			<singular>nautical mile</singular>
+			<plural>nautical miles</plural>
+		</name>
+	</unit>
+	<unit>
+		<name>
+			<singular>light year</singular>
+			<plural>light years</plural>
+		</name>
+	</unit>
+</translation>

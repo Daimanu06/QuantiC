@@ -1,0 +1,56 @@
+<translation name="surface">
+	<legalunit>
+		<name>
+			<singular>mètre par seconde au carré</singular>
+			<plural>mètres par seconde au carré</plural>
+		</name>
+	</legalunit>
+	<unit name="square inch">
+		<name>
+			<singular>pouce carré</singular>
+			<plural>pouces carrés</plural>
+		</name>
+	</unit>
+	<unit name="square foot">
+		<name>
+			<singular>pied carré</singular>
+			<plural>pieds carrés</plural>
+		</name>
+	</unit>
+	<unit name="square yard">
+		<name>
+			<singular>yard carré</singular>
+			<plural>yard carrés</plural>
+		</name>
+	</unit>
+	<unit name="square mile">
+		<name>
+			<singular>mile carré</singular>
+			<plural>miles carrés</plural>
+		</name>
+	</unit>
+	<unit name="are">
+		<name>
+			<singular>are</singular>
+			<plural>ares</plural>
+		</name>
+	</unit>
+	<unit name="hectare">
+		<name>
+			<singular>hectare</singular>
+			<plural>hectares</plural>
+		</name>
+	</unit>
+	<unit name="square kilometer">
+		<name>
+			<singular>kilomètre carré</singular>
+			<plural>kilomètres carrés</plural>
+		</name>
+	</unit>
+	<unit name="square millimeter">
+		<name>
+			<singular>millimètre carré</singular>
+			<plural>millimètres carrés</plural>
+		</name>
+	</unit>
+</translation>

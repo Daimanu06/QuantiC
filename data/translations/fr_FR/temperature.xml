@@ -1,0 +1,50 @@
+<translation name="température">
+	<legalunit>
+		<name>
+			<singular>Kelvin</singular>
+			<plural>Kelvin</plural>
+		</name>
+	</legalunit>
+	<unit name="Celsius">
+		<name>
+			<singular>degré Celsius</singular>
+			<plural>degrés Celsius</plural>
+		</name>
+	</unit>
+	<unit name="Fahrenheit">
+		<name>
+			<singular>degré Fahrenheit</singular>
+			<plural>degrés Fahrenheit</plural>
+		</name>
+	</unit>
+	<unit name="Rankine">
+		<name>
+			<singular>degré Rankine</singular>
+			<plural>degrés Rankine</plural>
+		</name>
+	</unit>
+	<unit name="Delisle">
+		<name>
+			<singular>degré Delisle</singular>
+			<plural>degrés Delisle</plural>
+		</name>
+	</unit>
+	<unit name="Newton">
+		<name>
+			<singular>degré Newton</singular>
+			<plural>degrés Newton</plural>
+		</name>
+	</unit>
+	<unit name="Réaumur">
+		<name>
+			<singular>degré Réaumur</singular>
+			<plural>degrés Réaumur</plural>
+		</name>
+	</unit>
+	<unit name="Rømer">
+		<name>
+			<singular>degré Rømer</singular>
+			<plural>degrés Rømer</plural>
+		</name>
+	</unit>
+</translation>

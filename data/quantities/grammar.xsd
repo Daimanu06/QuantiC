@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="quantity">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="legalunit" minOccurs="1" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ascii"         type="xs:string"     minOccurs="1" maxOccurs="1" />
+							<xs:element name="unicode"       type="xs:string"     minOccurs="1" maxOccurs="1" />
+						</xs:sequence>
+						<xs:attribute name="name" type="xs:string" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="unit" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ascii"         type="xs:string"      minOccurs="1" maxOccurs="1" />
+							<xs:element name="unicode"       type="xs:string"      minOccurs="1" maxOccurs="1" />
+							<xs:element name="toLegalUnit"   type="operationsType" minOccurs="1" maxOccurs="1" />
+							<xs:element name="fromLegalUnit" type="operationsType" minOccurs="1" maxOccurs="1" />
+						</xs:sequence>
+						<xs:attribute name="name" type="xs:string" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="operationsType">
+		<xs:choice minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="plus"    type="xs:double" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="less"    type="xs:double" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="times"   type="xs:double" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="divided" type="xs:double" minOccurs="0" maxOccurs="unbounded" />
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

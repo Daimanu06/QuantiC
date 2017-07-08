@@ -1,0 +1,24 @@
+v0.1 (initial release)
+‣ + main window;
+‣ + settings dialog;
+‣ + about dialog;
+‣ + 17 quantities (17 in total);
+‣ + 49 units (49 in total);
+‣ + 6  icons (6 in total);
+‣ + english translation;
+‣ + french translation;
+
+v0.2
+‣ + home screen;
+‣ + banner;
+‣ − index saving;
+ 
+v0.3
+‣ + prefix management;
+‣ ~ settings are now user-side and in INI format;
+‣ ~ Dialogs, Settings and Data are now owned by main() and not MainWindow anymore;
+‣ + graphic effect when banner buttons are pressed;
+‣ + application icon;
+‣ + user interface icon;
+‣ + changelog and license in About dialog;
+

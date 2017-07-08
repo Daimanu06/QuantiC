@@ -1,0 +1,23 @@
+<translation name="temps">
+	<legalunit>
+		<name>
+			<singular>seconde</singular>
+			<plural>secondes</plural>
+		</name>
+	</legalunit>
+
+	<unit name="minute">
+		<singular>minute</singular>
+		<plural>minutes</plural>
+	</unit>
+
+	<unit name="hour">
+		<singular>heure</singular>
+		<plural>heures</plural>
+	</unit>
+
+	<unit name="day">
+		<singular>jour</singular>
+		<plural>jours</plural>
+	</unit>
+</translation>

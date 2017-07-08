@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quantity name="weight" prefixsAllowed="all">
+	<legalunit name="newton">
+		<ascii>N</ascii>
+		<unicode>N</unicode>
+	</legalunit>
+</quantity>
